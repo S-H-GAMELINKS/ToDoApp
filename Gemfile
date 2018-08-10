@@ -31,6 +31,11 @@ gem 'jbuilder', '~> 2.5'
 # Using foreman
 gem 'foreman'
 
+# Using Materialize
+gem 'jquery-rails'
+gem 'materialize-sass'
+gem 'material_icons'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
