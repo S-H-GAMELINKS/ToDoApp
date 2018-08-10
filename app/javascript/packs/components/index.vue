@@ -69,6 +69,26 @@
         }, (error) => {
           console.log(error);
         });
+      },
+      doneTask: function (task_id) {
+        axios.put('/api/tasks/' + task_id, { task: { is_done: 1 } }).then((response) => {
+          this.moveFinishedTask(task_id);
+        }, (error) => {
+          console.log(error);
+        });
+      },
+      moveFinishedTask: function(task_id) {
+        var el = document.querySelector('#row_task_' + task_id);
+        // DOMをクローンしておく
+        var el_clone = el.cloneNode(true);
+        // 未完了の方を先に非表示にする
+        el.classList.add('display_none');
+        // もろもろスタイルなどをたして完了済みに追加
+        el_clone.getElementsByTagName('input')[0].checked = 'checked';
+        el_clone.getElementsByTagName('label')[0].classList.add('line-through');
+        el_clone.getElementsByTagName('label')[0].classList.remove('word-color-black');
+        var li = document.querySelector('#finished-tasks > ul > li:first-child');
+        document.querySelector('#finished-tasks > ul').insertBefore(el_clone, li);
       }
     }
   }
