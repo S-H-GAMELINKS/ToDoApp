@@ -21,7 +21,7 @@
       </ul>
     </div>
     <!-- 完了済みタスク表示ボタン -->
-    <div class="btn">Display finished tasks</div>
+    <div class="btn" v-on:click="displayFinishedTasks">Display finished tasks</div>
     <!-- 完了済みタスク一覧 -->
     <div id="finished-tasks" class="display_none">
       <ul class="collection">
