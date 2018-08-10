@@ -60,6 +60,16 @@
       displayFinishedTasks: function() {
         document.querySelector('#finished-tasks').classList.toggle('display_none');
       },
+      createTask: function () {
+        if (!this.newTask) return;
+       
+        axios.post('/api/tasks', { task: { name: this.newTask } }).then((response) => {
+          this.tasks.unshift(response.data.task);
+          this.newTask = '';
+        }, (error) => {
+          console.log(error);
+        });
+      }
     }
   }
 </script>
