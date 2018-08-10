@@ -57,6 +57,9 @@
           console.log(error);
         });
       },
+      displayFinishedTasks: function() {
+        document.querySelector('#finished-tasks').classList.toggle('display_none');
+      },
     }
   }
 </script>
