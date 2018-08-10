@@ -5,7 +5,7 @@ import Header from './components/header.vue'
 var app = new Vue({
     router: Router,
     el: '#app',
-    components {
+    components: {
         'navbar': 'Header'
     },
 })
